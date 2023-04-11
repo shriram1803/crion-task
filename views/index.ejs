@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Question 1</title>
+  </head>
+  <body>
+    <!-- Title heading -->
+    <h1>Question 1</h1>
+    <!-- Form to accept input values for x, y, and z -->
+    <form method="POST" action="/">
+      <label for="x">Enter an integer for x:</label>
+      <input type="number" id="x" name="x" required>
+      <br>
+      <label for="y">Enter an integer for y:</label>
+      <input type="number" id="y" name="y" required>
+      <br>
+      <label for="z">Enter an integer for z:</label>
+      <input type="number" id="z" name="z" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <!-- Conditionally render the output list if there is a result array with length of 4 -->
+    <% if (res && res.length === 4) { %>
+      <h1>Output:</h1>
+      <ul>
+        <li><%= res[0] %></li>
+        <li><%= res[1] %></li>
+        <li><%= res[2] %></li>
+        <li><%= res[3] %></li>
+      </ul>
+    <% } %>
+  </body>
+</html>
