@@ -85,8 +85,8 @@ app.post('/q1', (req, res) => {
     const { x, y, z } = req.body;
     // Call the solve function with x, y, and z, and store the result
     Question1Result = solveQ1(x, y, z);
-    // Render the index.ejs template with the result array
-    res.render('index', { resQ1: Question1Result, resQ2: Question2Result });
+    // Redirecting to the '/' URL
+    res.redirect("/");
 });
 
 // Route handler for POST requests to the root URL
@@ -95,8 +95,8 @@ app.post('/q2', (req, res) => {
     const { n } = req.body;
     // Call the solve function with x, y, and z, and store the result
     Question2Result = solveQ2(Number(n));
-    // Render the index.ejs template with the result array
-    res.render('index', { resQ1: Question1Result, resQ2: Question2Result });
+    // Redirecting to the '/' URL
+    res.redirect("/");
 });
 
 // Start the server and listen on port 3000
