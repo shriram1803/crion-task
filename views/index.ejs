@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Question 1</title>
+    <title>Crion Task</title>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <!-- Title heading -->
-    <h1>Question 1</h1>
-    <!-- Form to accept input values for x, y, and z -->
-    <form method="POST" action="/q1">
-      <label for="x">Enter an integer for x:</label>
-      <input type="number" id="x" name="x" required>
-      <br>
-      <label for="y">Enter an integer for y:</label>
-      <input type="number" id="y" name="y" required>
-      <br>
-      <label for="z">Enter an integer for z:</label>
-      <input type="number" id="z" name="z" required>
-      <br>
-      <button type="submit">Submit</button>
-    </form>
-    <!-- Conditionally render the output list if there is a result array with length of 4 -->
-    <% if (resQ1 && resQ1.length === 4) { %>
-      <h1>Output:</h1>
-      <ul>
-        <li><%= resQ1[0] %></li>
-        <li><%= resQ1[1] %></li>
-        <li><%= resQ1[2] %></li>
-        <li><%= resQ1[3] %></li>
-      </ul>
-    <% } %>
-      <br> <br>
-    <h1>Question 2</h1>
-    <!-- Form to accept input values for x, y, and z -->
-    <form method="POST" action="/q2">
-      <label for="x">Enter integer n:</label>
-      <input type="number" id="n" name="n" required>
-      <br>
-      <button type="submit">Submit</button>
-    </form>
-    <!-- Conditionally render the output list if there is a result array with length of 4 -->
-    <% if (resQ2 && resQ2.length !== 0) { %>
-      <h1>Output:</h1>
-      <h3> <%= resQ2 %> </h3>
-    <% } %>
+    <div>
+      <!-- Title heading -->
+      <h1>Question 1</h1>
+
+      <!-- Form to accept input values for x, y, and z -->
+      <form method="POST" action="/q1">
+        <label for="x">Enter an integer for x:</label>
+        <input type="number" id="x" name="x" required><br>
+
+        <label for="y">Enter an integer for y:</label>
+        <input type="number" id="y" name="y" required><br>
+
+        <label for="z">Enter an integer for z:</label>
+        <input type="number" id="z" name="z" required><br>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Conditionally render the output list if there is a result array with length of 4 -->
+      <% if (resQ1 && resQ1.length === 4) { %>
+        <h1>Output:</h1>
+        <ul>
+          <li><%= resQ1[0] %></li>
+          <li><%= resQ1[1] %></li>
+          <li><%= resQ1[2] %></li>
+          <li><%= resQ1[3] %></li>
+        </ul>
+      <% } %>
+    </div>
+
+    <br><br>
+
+    <div>
+      <h1>Question 2</h1>
+
+      <!-- Form to accept input value for n -->
+      <form method="POST" action="/q2">
+        <label for="n">Enter an integer for n:</label>
+        <input type="number" id="n" name="n" required><br>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- Conditionally render the output if there is a result -->
+      <% if (resQ2 !== undefined) { %>
+        <h1>Output:</h1>
+        <h3><%= resQ2 %></h3>
+      <% } %>
+    </div>
   </body>
 </html>
